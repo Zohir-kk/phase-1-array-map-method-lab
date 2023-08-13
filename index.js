@@ -12,5 +12,14 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map((tutorial) => capitalizeFirstLetter(tutorial));
+};
+
+function capitalizeFirstLetter(sentence) {
+  const words = sentence.split(" ")
+  const capitalizeAll = words.map((word)=> word.charAt(0).toUpperCase()+ word.slice(1))
+  const capitalizeSentence = capitalizeAll.join(" ")
+  return capitalizeSentence
 }
+console.log(titleCased(tutorials));
+
